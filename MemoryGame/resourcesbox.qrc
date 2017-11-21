@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/fonts">
+        <file>Resourcesbox/mvboli.ttf</file>
+    </qresource>
+    <qresource prefix="/icon">
+        <file>Resourcesbox/button/bticon02.png</file>
+        <file>Resourcesbox/button/bticon03.png</file>
+        <file>Resourcesbox/button/bticon04.png</file>
+        <file>Resourcesbox/button/bticon05.png</file>
+        <file>Resourcesbox/button/bticon06.png</file>
+        <file>Resourcesbox/button/bticon07.png</file>
+        <file>Resourcesbox/button/bticon08.png</file>
+        <file>Resourcesbox/button/bticon09.png</file>
+        <file>Resourcesbox/button/bticon01.png</file>
+        <file>Resourcesbox/button/btplay.png</file>
+        <file>Resourcesbox/button/bticon00.png</file>
+    </qresource>
+</RCC>
