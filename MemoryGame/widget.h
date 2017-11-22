@@ -56,6 +56,8 @@ private:
     QTimer *Timer_play, *Timer_sec;
     int font_ID_mvboli;
     QString font_data_mvboli;
+    QPixmap correct ,wrong;
+
 
 };
 

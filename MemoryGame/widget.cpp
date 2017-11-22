@@ -26,6 +26,9 @@ Widget::Widget(QWidget *parent) :
     connect(Timer_sec,SIGNAL(timeout()),this,SLOT(TimerSec()));
     font_ID_mvboli = QFontDatabase::addApplicationFont(":/fonts/Resourcesbox/mvboli.ttf");
     font_data_mvboli = QFontDatabase::applicationFontFamilies(font_ID_mvboli).at(0);
+
+    correct.load(":/icon/Resourcesbox/button/correct.png");
+    wrong.load(":/icon/Resourcesbox/button/wrong.png");
 }
 
 void Widget::uiset()
@@ -37,8 +40,6 @@ void Widget::uiset()
 
     ui->PB_home_play->setIcon(playicon);
     ui->PB_home_play->setIconSize(ui->PB_home_play->size());
-    //ui->PB_home_play->setIconSize(QSize(playicon.size().scaled(ui->PB_home_play->size(),Qt::IgnoreAspectRatio)));
-    qDebug()<<playicon.size();
 }
 
 Widget::~Widget()
@@ -75,9 +76,6 @@ void Widget::readygame()
     dialog->setStyleSheet(
                 "background-color:qradialgradient(spread:reflect, cx:0.5, cy:0.5, radius:0.9, fx:0.5, fy:0.5, stop:0.5 rgba(25, 255, 131, 208), stop:0.710227 rgba(255, 255, 255, 0));\nborder-style: outset;"
                 );
-                /*
-                "background-color:qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.7, fx:0.5, fy:0.5, stop:0.242938 rgba(62, 255, 41, 250), stop:1 rgba(255, 255, 255, 255));"
-                "border-style: outset;");*/
     QPushButton *dialog_OK = new QPushButton();
     dialog_OK->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
     dialog_OK->setText(tr("START!!"));
@@ -102,7 +100,7 @@ void Widget::on_pushButton_9_clicked()
 void Widget::resetgame()//重製遊戲
 {
     ui->timerbar->setValue(0);
-    ans_count = 1;
+    ans_count = 0;
     Timer_sec->stop();
     for (int i = 0;i < ui->playbox->count();)//重製按鈕
     {
@@ -117,6 +115,7 @@ void Widget::slotGetNumber()//按下遊戲中的按鈕
     Playbutton *button = (Playbutton *)sender();
     if (button->answer() ==  ans_count && game_Enabled)
     {
+        button->setIcon(correct);
         if (ans_count == ui->label_amount->text().toInt())
         {
             Timer_play->stop();
@@ -125,15 +124,12 @@ void Widget::slotGetNumber()//按下遊戲中的按鈕
             msgBox.setWindowTitle("勝利~~!");
             msgBox.setText(QString("時間：%1s \n是否繼續?").arg(count_time / 10));
             msgBox.setStandardButtons (QMessageBox::Yes | QMessageBox::Reset);
-            //QPushButton *connectButton = msgBox.addButton(tr("Connect"), QMessageBox::ActionRole);
-
-            //msgBox.setDefaultButton(QMessageBox::No);
-            //msgBox.addButton(tr("back"),QMessageBox::AcceptRole);
             int chose = msgBox.exec();
 
             switch (chose) {
             case QMessageBox::Yes:
-                on_pushButton_9_clicked();
+                resetgame();
+                on_pushButton_8_clicked();
                 break;
             case QMessageBox::Reset:
                 on_pushButton_9_clicked();
@@ -142,6 +138,7 @@ void Widget::slotGetNumber()//按下遊戲中的按鈕
             count_time = 0;
         }
         ans_count++;
+        ui->label_4->setText(QString("%1").arg(ans_count));
     }
 }
 
@@ -151,9 +148,6 @@ void Widget::set_btn()//設置遊戲按鈕數量
     ui->playbox->setSpacing(0);
     ui->playbox->setHorizontalSpacing(0);
     ui->BPlaybox->resize(ui->BPlaybox->size().width(),ui->BPlaybox->size().width());
-
-    //QFont font_mvboli(font_data_mvboli);
-    //font_mvboli.setPixelSize(50);
 
     for (int i = 0;i < range;i++)
     {
@@ -165,9 +159,6 @@ void Widget::set_btn()//設置遊戲按鈕數量
             button->setMinimumSize(QSize(ui->BPlaybox->size().width() / range
                                          ,ui->BPlaybox->size().width() / range));//按鍵大小
             button->setSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed);
-
-            //button->setFont(QFont("",button->size().height()/13));//設定字體字型
-            //button->setFont(QFont(font_mvboli));
             ui->playbox->addWidget(button,i,j);//新增button於i行j列
             connect(button, SIGNAL(clicked()), this, SLOT(slotGetNumber()));//信號
         }
@@ -211,7 +202,6 @@ void Widget::set_game()//設置遊戲題目
     ui->timerbar->setValue(0);
     ui->timerbar->setMaximum(sec * 100);
     Timer_sec->start(10);
-
 }
 
 void Widget::TimerSec()
@@ -275,8 +265,13 @@ void Widget::on_PB_sec_UP_clicked()
         ui->label_sec->setText(QString("%1").arg(ui->label_sec->text().toInt() + 1));
 }
 
+int cfont = 100;
 void Widget::on_pushButton_2_clicked()
 {
+    QFont serifFont("Times", cfont++, QFont::Bold);
+    ui->pushButton_2->setText("123");
+    ui->pushButton_2->setFont(serifFont);
+    qDebug()<<ui->pushButton_2->size().height()<< ui->pushButton_2->fontMetrics().height();
 }
 
 

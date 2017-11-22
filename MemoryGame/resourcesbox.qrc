@@ -14,5 +14,7 @@
         <file>Resourcesbox/button/bticon01.png</file>
         <file>Resourcesbox/button/btplay.png</file>
         <file>Resourcesbox/button/bticon00.png</file>
+        <file>Resourcesbox/button/correct.png</file>
+        <file>Resourcesbox/button/wrong.png</file>
     </qresource>
 </RCC>
