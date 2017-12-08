@@ -43,7 +43,7 @@
    <item row="0" column="0">
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="Page_home">
       <layout class="QGridLayout" name="gridLayout_2">
@@ -567,7 +567,7 @@ border-style: outset;</string>
             <enum>Qt::NoFocus</enum>
            </property>
            <property name="text">
-            <string>離開</string>
+            <string/>
            </property>
            <property name="checkable">
             <bool>false</bool>

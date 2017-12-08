@@ -21,6 +21,7 @@ void Playbutton::addID()
 void Playbutton::Reset()
 {
     ID_count = 0;
+    ANS_count = 0;
 }
 void Playbutton::answer(int ans)
 {

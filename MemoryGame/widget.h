@@ -51,14 +51,14 @@ private slots:
 
     void on_PB_home_play_clicked();
 
+    void on_pushButton_10_clicked();
+
 private:
     Ui::Widget *ui;
     QTimer *Timer_play, *Timer_sec;
     int font_ID_mvboli;
     QString font_data_mvboli;
-    QPixmap correct ,wrong;
-
-
+    QPixmap correct ,wrong ,prompt;
 };
 
 #endif // WIDGET_H
