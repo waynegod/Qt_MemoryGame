@@ -646,7 +646,7 @@ border-style: outset;</string>
          <item row="2" column="0">
           <widget class="QLabel" name="label_4">
            <property name="text">
-            <string>TextLabel</string>
+            <string>1</string>
            </property>
           </widget>
          </item>

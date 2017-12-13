@@ -20,6 +20,7 @@ public:
     void uiset();
     void readygame();
     void resetgame();
+    QPixmap pixmapbox[9];
     ~Widget();
 
 public slots:

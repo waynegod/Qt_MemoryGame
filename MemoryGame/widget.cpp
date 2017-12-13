@@ -26,10 +26,22 @@ Widget::Widget(QWidget *parent) :
     connect(Timer_sec,SIGNAL(timeout()),this,SLOT(TimerSec()));
     font_ID_mvboli = QFontDatabase::addApplicationFont(":/fonts/Resourcesbox/mvboli.ttf");
     font_data_mvboli = QFontDatabase::applicationFontFamilies(font_ID_mvboli).at(0);
-
+    //icon  font :Alice
     correct.load(":/icon/Resourcesbox/button/correct.png");
     wrong.load(":/icon/Resourcesbox/button/wrong.png");
     prompt.load(":/icon/Resourcesbox/button/prompt.png");
+
+    pixmapbox[0].load(":/icon/Resourcesbox/button/bticon00.png");
+    pixmapbox[1].load(":/icon/Resourcesbox/button/bticon01.png");
+    pixmapbox[2].load(":/icon/Resourcesbox/button/bticon02.png");
+    pixmapbox[3].load(":/icon/Resourcesbox/button/bticon03.png");
+    pixmapbox[4].load(":/icon/Resourcesbox/button/bticon04.png");
+    pixmapbox[5].load(":/icon/Resourcesbox/button/bticon05.png");
+    pixmapbox[6].load(":/icon/Resourcesbox/button/bticon06.png");
+    pixmapbox[7].load(":/icon/Resourcesbox/button/bticon07.png");
+    pixmapbox[8].load(":/icon/Resourcesbox/button/bticon08.png");
+    pixmapbox[9].load(":/icon/Resourcesbox/button/bticon09.png");
+
 }
 
 void Widget::uiset()
@@ -122,17 +134,6 @@ void Widget::set_game()//設置遊戲題目
     pose = type.get_position(range * range);//建立按鈕總數
     qus = type.get_problem(amount);//建立題目數
     ///圖片資源集
-    QPixmap pixmapbox[9];
-    pixmapbox[0].load(":/icon/Resourcesbox/button/bticon00.png");
-    pixmapbox[1].load(":/icon/Resourcesbox/button/bticon01.png");
-    pixmapbox[2].load(":/icon/Resourcesbox/button/bticon02.png");
-    pixmapbox[3].load(":/icon/Resourcesbox/button/bticon03.png");
-    pixmapbox[4].load(":/icon/Resourcesbox/button/bticon04.png");
-    pixmapbox[5].load(":/icon/Resourcesbox/button/bticon05.png");
-    pixmapbox[6].load(":/icon/Resourcesbox/button/bticon06.png");
-    pixmapbox[7].load(":/icon/Resourcesbox/button/bticon07.png");
-    pixmapbox[8].load(":/icon/Resourcesbox/button/bticon08.png");
-    pixmapbox[9].load(":/icon/Resourcesbox/button/bticon09.png");
 
     for (int i = 0;i < range * range;i++)//掃描全部按鈕
     {
@@ -149,6 +150,7 @@ void Widget::set_game()//設置遊戲題目
             }
         }
     }
+    ui->label_4->setText(QString("%1").arg(ans_count));
     ui->timerbar->setValue(0);
     ui->timerbar->setMaximum(sec * 100);
     Timer_sec->start(10);
@@ -156,6 +158,7 @@ void Widget::set_game()//設置遊戲題目
 
 void Widget::TimerSec()
 {
+
     int bar = ui->timerbar->value();
     ui->timerbar->setValue(bar + 1);
     QPixmap pixmapbox;
@@ -182,14 +185,17 @@ void Widget::playtime()
 
 void Widget::on_pushButton_9_clicked()
 {
+    resetgame();
+    ui->stackedWidget->setCurrentIndex(1);
 
 }
 
 void Widget::resetgame()//重製遊戲
 {
     game_over = true;
+
     ui->timerbar->setValue(0);
-    ans_count = 0;
+    ans_count = 1;
     Timer_sec->stop();
     Timer_play->stop();
 
@@ -218,6 +224,7 @@ void Widget::slotGetNumber()//按下遊戲中的按鈕
             msgBox.setStandardButtons (QMessageBox::Yes | QMessageBox::Reset);
             int chose = msgBox.exec();
             resetgame();
+            ans_count = 0;
             switch (chose) {
             case QMessageBox::Yes:
                 on_pushButton_8_clicked();
@@ -228,8 +235,9 @@ void Widget::slotGetNumber()//按下遊戲中的按鈕
             }
             count_time = 0;
         }
+
+        ui->label_4->setText(QString("%1 %2").arg(ans_count).arg(button->answer()));
         ans_count++;
-        ui->label_4->setText(QString("%1").arg(ans_count));
     }
     else if(game_Enabled)
     {
