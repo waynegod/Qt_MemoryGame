@@ -109,10 +109,11 @@ void Widget::readygame()//遊戲開始前的開啟按鈕
     QDialog *dialog = new QDialog(this);
     dialog->setWindowFlags(Qt::Tool);
 
-    dialog->setStyleSheet(
-                "background-color:qradialgradient(spread:reflect, cx:0.5, cy:0.5, radius:0.9, fx:0.5, fy:0.5, stop:0.5 rgba(25, 255, 131, 208), stop:0.710227 rgba(255, 255, 255, 0));\nborder-style: outset;"
-                );
+    //dialog->setStyleSheet(                );
     QPushButton *dialog_OK = new QPushButton();
+    dialog_OK->setStyleSheet("background-color:qradialgradient(spread:reflect, cx:0.5, cy:0.5, radius:0.8, fx:0.5, fy:0.5, stop:0.5 rgb(157,255,121), stop:0.710227 rgb(255,255,255));"
+                             "\nborder-style: outset;"
+                             );
     dialog_OK->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
     dialog_OK->setText(tr("START!!"));
     dialog->resize(ui->stackedWidget->size().width() / 1.5
