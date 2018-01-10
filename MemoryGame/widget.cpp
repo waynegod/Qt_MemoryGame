@@ -236,8 +236,6 @@ void Widget::slotGetNumber()//按下遊戲中的按鈕
             }
             count_time = 0;
         }
-
-        ui->label_4->setText(QString("%1 %2").arg(ans_count).arg(button->answer()));
         ans_count++;
     }
     else if(game_Enabled)
@@ -306,5 +304,7 @@ void Widget::on_pushButton_2_clicked()
     //qDebug()<<ui->pushButton_2->size().height()<< ui->pushButton_2->fontMetrics().height();
 }
 
+void Widget::on_pushButton_3_clicked()
+{
 
-
+}

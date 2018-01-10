@@ -54,6 +54,8 @@ private slots:
 
     void on_pushButton_10_clicked();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::Widget *ui;
     QTimer *Timer_play, *Timer_sec;

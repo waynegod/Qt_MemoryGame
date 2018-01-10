@@ -24,6 +24,10 @@
   <property name="windowTitle">
    <string>Widget</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">#Page_home{border-image:url(:/icon/Resourcesbox/285606-memory.png)}
+#Page_choose{border-image:url(:/icon/Resourcesbox/285606-memory.png)}</string>
+  </property>
   <layout class="QGridLayout" name="gamebox">
    <property name="leftMargin">
     <number>0</number>
@@ -42,6 +46,9 @@
    </property>
    <item row="0" column="0">
     <widget class="QStackedWidget" name="stackedWidget">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>
@@ -49,9 +56,12 @@
       <enum>QFrame::Plain</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="Page_home">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <layout class="QGridLayout" name="gridLayout_2">
        <property name="sizeConstraint">
         <enum>QLayout::SetDefaultConstraint</enum>
@@ -163,11 +173,11 @@ border-style: outset;</string>
             <bool>true</bool>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color:qradialgradient(spread:reflect, cx:0.5, cy:0.5, radius:0.9, fx:0.5, fy:0.5, stop:0.5 rgba(25, 255, 131, 208), stop:0.710227 rgba(255, 255, 255, 0));
+            <string notr="true">background-color:transparent;
 border-style: outset;</string>
            </property>
            <property name="text">
-            <string>ABC123</string>
+            <string/>
            </property>
            <property name="iconSize">
             <size>
@@ -208,20 +218,16 @@ border-style: outset;</string>
            </property>
            <property name="font">
             <font>
-             <pointsize>-1</pointsize>
+             <family>Aparajita</family>
+             <pointsize>24</pointsize>
              <weight>75</weight>
              <italic>false</italic>
              <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">    background-color:#ffffff;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 50px;
-    border-color: beige;
-    font: bold 30px;
-    padding: 6px;</string>
+            <string notr="true">background-color:transparent;
+border-style: outset;</string>
            </property>
            <property name="text">
             <string>結束遊戲</string>
@@ -269,14 +275,17 @@ border-style: outset;</string>
          <item row="2" column="0" colspan="2">
           <widget class="QPushButton" name="pushButton_8">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="font">
             <font>
+             <family>Aharoni</family>
              <pointsize>40</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
            <property name="text">
@@ -289,6 +298,9 @@ border-style: outset;</string>
            <property name="orientation">
             <enum>Qt::Vertical</enum>
            </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Expanding</enum>
+           </property>
            <property name="sizeHint" stdset="0">
             <size>
              <width>20</width>
@@ -299,25 +311,50 @@ border-style: outset;</string>
          </item>
          <item row="0" column="0" colspan="2">
           <layout class="QGridLayout" name="gridLayout_3">
+           <property name="sizeConstraint">
+            <enum>QLayout::SetMaximumSize</enum>
+           </property>
+           <property name="spacing">
+            <number>0</number>
+           </property>
            <item row="4" column="2">
             <widget class="QPushButton" name="PB_sec_DW">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
                <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
+             <property name="styleSheet">
+              <string notr="true">border-image:url(:/icon/Resourcesbox/button/-.png);
+background-color: rgb(255, 255, 127);</string>
+             </property>
              <property name="text">
-              <string>&lt;</string>
+              <string/>
              </property>
             </widget>
            </item>
            <item row="3" column="0">
             <widget class="QLabel" name="label_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
                <pointsize>40</pointsize>
               </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 127);</string>
              </property>
              <property name="text">
               <string>數量</string>
@@ -326,10 +363,19 @@ border-style: outset;</string>
            </item>
            <item row="2" column="0">
             <widget class="QLabel" name="label">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
                <pointsize>40</pointsize>
               </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 127);</string>
              </property>
              <property name="text">
               <string>範圍</string>
@@ -338,10 +384,19 @@ border-style: outset;</string>
            </item>
            <item row="4" column="0">
             <widget class="QLabel" name="label_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
                <pointsize>40</pointsize>
               </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 127);</string>
              </property>
              <property name="text">
               <string>秒數</string>
@@ -351,7 +406,7 @@ border-style: outset;</string>
            <item row="4" column="3">
             <widget class="QPushButton" name="PB_sec_UP">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -362,30 +417,30 @@ border-style: outset;</string>
                <bold>true</bold>
               </font>
              </property>
-             <property name="text">
-              <string>&gt;</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0" colspan="4">
-            <widget class="QPushButton" name="pushButton_4">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
+             <property name="styleSheet">
+              <string notr="true">border-image:url(:/icon/Resourcesbox/button/+.png);
+background-color: rgb(255, 255, 127);</string>
              </property>
              <property name="text">
-              <string>back</string>
+              <string/>
              </property>
             </widget>
            </item>
            <item row="4" column="1">
             <widget class="QLabel" name="label_sec">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
                <pointsize>40</pointsize>
               </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 127);</string>
              </property>
              <property name="text">
               <string>1</string>
@@ -397,19 +452,35 @@ border-style: outset;</string>
            </item>
            <item row="3" column="2">
             <widget class="QPushButton" name="PB_amount_DW">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
                <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
+             <property name="styleSheet">
+              <string notr="true">border-image:url(:/icon/Resourcesbox/button/-.png);
+background-color: rgb(255, 255, 127);</string>
+             </property>
              <property name="text">
-              <string>&lt;</string>
+              <string/>
              </property>
             </widget>
            </item>
            <item row="2" column="2">
             <widget class="QPushButton" name="PB_range_DW">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
                <pointsize>24</pointsize>
@@ -417,43 +488,76 @@ border-style: outset;</string>
                <bold>true</bold>
               </font>
              </property>
+             <property name="styleSheet">
+              <string notr="true">border-image:url(:/icon/Resourcesbox/button/-.png);
+background-color: rgb(255, 255, 127);</string>
+             </property>
              <property name="text">
-              <string>&lt;</string>
+              <string/>
              </property>
             </widget>
            </item>
            <item row="3" column="3">
             <widget class="QPushButton" name="PB_amount_UP">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
                <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
+             <property name="styleSheet">
+              <string notr="true">border-image:url(:/icon/Resourcesbox/button/+.png);
+background-color: rgb(255, 255, 127);</string>
+             </property>
              <property name="text">
-              <string>&gt;</string>
+              <string/>
              </property>
             </widget>
            </item>
            <item row="2" column="3">
             <widget class="QPushButton" name="PB_range_UP">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
                <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
+             <property name="styleSheet">
+              <string notr="true">border-image:url(:/icon/Resourcesbox/button/+.png);
+background-color: rgb(255, 255, 127);</string>
+             </property>
              <property name="text">
-              <string>&gt;</string>
+              <string/>
              </property>
             </widget>
            </item>
            <item row="3" column="1">
             <widget class="QLabel" name="label_amount">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
                <pointsize>40</pointsize>
               </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 127);</string>
              </property>
              <property name="text">
               <string>3</string>
@@ -476,11 +580,35 @@ border-style: outset;</string>
                <pointsize>40</pointsize>
               </font>
              </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 127);</string>
+             </property>
              <property name="text">
               <string>3</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="4">
+            <widget class="QPushButton" name="pushButton_4">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>Aharoni</family>
+               <pointsize>26</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>back</string>
              </property>
             </widget>
            </item>
@@ -660,6 +788,12 @@ border-style: outset;</string>
          </item>
          <item row="2" column="0" colspan="2">
           <widget class="QLabel" name="label_4">
+           <property name="font">
+            <font>
+             <family>Andalus</family>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
            <property name="text">
             <string>1</string>
            </property>
@@ -678,5 +812,22 @@ border-style: outset;</string>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>Widget</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>162</x>
+     <y>538</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>206</x>
+     <y>316</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

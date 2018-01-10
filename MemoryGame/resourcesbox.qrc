@@ -17,5 +17,8 @@
         <file>Resourcesbox/button/correct.png</file>
         <file>Resourcesbox/button/wrong.png</file>
         <file>Resourcesbox/button/prompt.png</file>
+        <file>Resourcesbox/285606-memory.png</file>
+        <file>Resourcesbox/button/-.png</file>
+        <file>Resourcesbox/button/+.png</file>
     </qresource>
 </RCC>
